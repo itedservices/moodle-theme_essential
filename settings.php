@@ -152,6 +152,15 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $essentialsettingsgeneric->add($setting);
 
+    // Custom login URL
+    $name = 'theme_essential/loginurl';
+    $title = get_string('loginurl', 'theme_essential');
+    $description = get_string('loginurldesc', 'theme_essential');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $essentialsettingsgeneric->add($setting);
+
     $readme = new moodle_url('/theme/essential/README.txt');
     $readme = html_writer::link($readme, get_string('readme_click', 'theme_essential'), array('target' => '_blank'));
 

@@ -195,6 +195,9 @@ $string['favicondesc'] = 'Upload your own favicon.  It should be an .ico file.';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this text area will be reflected in every page, making for easier customisation of this theme.';
 
+$string['loginurl'] = 'Custom login URL';
+$string['loginurldesc'] = 'Replaces the login link in the navigation bar with the specified value';
+
 // Courses menu.
 $string['mycoursesinfo'] = 'Courses menu';
 $string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user.';

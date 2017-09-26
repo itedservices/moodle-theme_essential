@@ -1410,8 +1410,10 @@ class core_renderer extends \core_renderer {
         }
 
         global $USER, $CFG, $DB;
-        $loginurl = get_login_url();
 
+        $customloginurl = \theme_essential\toolbox::get_setting('loginurl');
+        $loginurl = $customloginurl ? $customloginurl : get_login_url();
+        
         $usermenu = html_writer::start_tag('ul', array('class' => 'nav'));
         $usermenu .= html_writer::start_tag('li', array('class' => 'dropdown'));
 
@@ -1434,7 +1436,7 @@ class core_renderer extends \core_renderer {
             }
             $usermenu .= html_writer::start_tag('ul', array('class' => $classes));
             $branchlabel = '<em>'.$this->getfontawesomemarkup('sign-in').get_string('login').'</em>';
-            $branchurl = new moodle_url('/login/index.php');
+            $branchurl = $loginurl;
             $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
 
             // Render Help Link.
